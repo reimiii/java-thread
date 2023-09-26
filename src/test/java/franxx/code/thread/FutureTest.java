@@ -54,7 +54,8 @@ public class FutureTest {
     void invokeAll() throws InterruptedException, ExecutionException {
         ExecutorService service = Executors.newFixedThreadPool(10);
 
-        List<Callable<String>> callables = IntStream.range(1, 11).mapToObj(value -> (Callable<String>) () -> {
+        List<Callable<String>> callables = IntStream.range(1, 11)
+                .mapToObj(value -> (Callable<String>) () -> {
             Thread.sleep(value * 500L);
             return String.valueOf(value);
         }).collect(Collectors.toList());
@@ -78,4 +79,5 @@ public class FutureTest {
         var value = executor.invokeAny(callables);
         System.out.println(value);
     }
+    // 2:40:53 fast 2.36
 }
