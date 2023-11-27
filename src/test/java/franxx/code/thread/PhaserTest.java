@@ -10,7 +10,7 @@ public class PhaserTest {
     @Test
     void countDownLatchTest() throws InterruptedException {
         final var phaser = new Phaser();
-        final var executor =  Executors.newFixedThreadPool(10);
+        final var executor = Executors.newFixedThreadPool(10);
 
         phaser.bulkRegister(5);
 
@@ -29,7 +29,7 @@ public class PhaserTest {
             });
         }
 
-        executor.execute(() ->  {
+        executor.execute(() -> {
             phaser.awaitAdvance(0);
             System.out.println("All Task Done");
         });
@@ -40,7 +40,7 @@ public class PhaserTest {
     @Test
     void cyclicBarrierTest() {
         final var phaser = new Phaser();
-        final var executor =  Executors.newFixedThreadPool(10);
+        final var executor = Executors.newFixedThreadPool(10);
 
         phaser.bulkRegister(5);
 

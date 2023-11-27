@@ -13,7 +13,6 @@ public class CyclicBarrierTest {
         final var cyclicBarrier = new CyclicBarrier(5);
         final var executor = Executors.newFixedThreadPool(10);
 
-
         for (int i = 0; i < 5; i++) {
             executor.execute(() -> {
                 try {
