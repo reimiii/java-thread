@@ -2,7 +2,6 @@ package franxx.code.thread;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class LockTest {
